@@ -1,0 +1,44 @@
+{{- define "layout"}}<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{template "title" .}} - FTPSlurper</title>
+  <link type="text/css" rel="stylesheet" media="screen" href="/static/css/admin-top-nav.min.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="/static/css/message-bar.min.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="/static/css/image-modal.min.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="/static/css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Photo Collab</h1>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="/"{{if eq .ActiveMenu "photos"}} class="is-active"{{end}}>Photos</a>
+        </li>
+        <li>
+          <a href="/about"{{if eq .ActiveMenu "about"}} class="is-active"{{end}}>About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- END NAV -->
+
+  <main>
+    {{template "content" .}}
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Adam Presley</p>
+  </footer>
+
+  <script type="module" src="/static/js/message-bar.min.js"></script>
+  <script type="module" src="/static/js/image-modal.min.js"></script>
+</body>
+</html>
+{{end}}
+
